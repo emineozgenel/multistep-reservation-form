@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+body {
+  background-color: #f9fafb;
+  font-family: 'Nunito', sans-serif;
+}
+
+.vue-step-wizard {
+  max-width: 775px;
+  margin: auto;
+  padding: 0px 20px;
+}
+
+.step-pills {
+  margin: 4em 0px 2em;
+  display: flex;
+  overflow: auto;
+  padding: 1rem 0px;
+}
+
+.step-pills .step-item {
+  list-style-type: none;
+  margin: 0px 30px;
+  position: relative;
+}
+
+.step-pills .step-item:not(:last-child):after {
+  background: #e8e8e8;
+  content: "";
+  width: 43px;
+  left: 112%;
+  position: absolute;
+  top: 50%;
+  height: 1px;
+}
+
+.step-pills .step-item a {
+  text-decoration: none;
+  color: #040f4b;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.step-pills .step-item.active .tab-status {
+  border: 1px solid #03A9F4;
+  background-color: #03A9F4;
+  color: #fff;
+}
+
+.step-pills .tab-status {
+  position: relative;
+  display: inline-block;
+  font-size: 14px;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: .5rem;
+  color: #fff;
+  text-align: center;
+  border: 1px solid #03A9F4;
+  color: #03A9F4;
+  border-radius: 50%;
+}
+
+.step-pills .tab-status .b-icon {
+  display: none;
+  position: absolute;
+  width: 22px;
+  height: 22px;
+}
+
+.step-pills .step-item.validated .tab-status {
+  background-color: transparent;
+  border: 1px solid #5fd180;
+  color: #5fd180;
+}
+
+.step-body {
+  background-color: white;
+  padding: 20px;
+}
+
+.step-footer {
+  margin-left: auto;
+  padding: 1rem;
+  border-radius: 1rem;
+  text-align: right;
+}
+
+.step-button {
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1;
+  position: relative;
+  max-width: 30rem;
+  text-align: center;
+  border: 1px solid;
+  border-radius: 12px;
+  padding: 0.6rem 1.25rem;
+  margin: 0.5rem;
+  color: #fff;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.step-button-next {
+  background-color: #0288D1;
+}
+
+.step-button-previous {
+  background-color: transparent;
+  color: #040f4b;
+}
+
+.step-button-submit {
+  background-color: #71af43;
+}
+
+.step-button-reset {
+  background-color: #037da2;
+}
+
+.credit-card {
+  max-width: 375px;
+  height: 215px;
+  margin: auto;
+  width: 100%;
+  background-color: transparent;
+  color: #ffffff;
+  perspective: 1000px;
+}
+
+.credit-card:hover .credit-card__inner {
+  transform: rotateY(180deg);
+}
+
+.credit-card__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.show-back {
+  transform: rotateY(180deg);
+}
+
+.show-back:hover {
+  transform: rotateY(0deg);
+}
+
+.card-front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  z-index: 100;
+}
+
+.card-front__image {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+}
+
+.card-front__number {
+  position: absolute;
+  font-size: 26px;
+  top: 35%;
+  left: 24px;
+}
+
+.card-front__chip {
+  position: absolute;
+  top: 16px;
+  left: 24px;
+  height: 44px;
+}
+
+.card-front__symbol {
+  position: absolute;
+  top: 16px;
+  right: 24px;
+  height: 48px;
+}
+
+.card-front__info {
+  position: absolute;
+  bottom: 16px;
+  right: 24px;
+  color: white;
+  text-align: left;
+  margin: 0;
+}
+
+.card-front__info.left {
+  left: 24px;
+}
+
+.card-front__info p {
+  margin: 0;
+}
+
+.card-front__expires {
+  right: auto;
+  left: 24px;
+}
+
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  z-index: 100;
+  transform: rotateY(180deg);
+}
+
+.card-back__image {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+}
+
+.card-back__stripe {
+  padding: 24px;
+  position: relative;
+  bottom: 90%;
+  opacity: 0.8;
+  width: 100%;
+  background-color: black;
+}
+
+.card-back__cvv {
+  border-radius: 4px;
+  position: absolute;
+  bottom: 35%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 92%;
+  background-color: white;
+  color: black;
+  text-align: right;
+  font-size: 22px;
+  min-height: 45px;
+  padding: 8px;
+}
+@media screen and (min-width: 480px) {
+  .step-pills {
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 480px) {
+  .credit-card {
+    height: 210px;
+  }
+  .card-front__number {
+    font-size: 22px;
+  }
+  .card-front__info {
+    font-size: 12px;
+  }
+  .card-front__chip {
+    height: 34px;
+  }
+  .card-front__symbol {
+    height: 38px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .card-back__stripe {
+    padding: 18px;
+  }
+  .card-back__cvv {
+    min-height: 36px;
+    padding: 4px;
+  }
+  .card-front__number {
+    font-size: 18px;
+  }
+  .credit-card {
+    height: 180px;
+  }
+}
